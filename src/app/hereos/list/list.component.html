@@ -1,0 +1,28 @@
+<h3>Listado de heroes</h3>
+<h4>hero Eliminado :
+  @if(customHero){
+    <li class="text-danger">{{customHero.name}}</li>
+  }@else {
+    <li class="text-danger">no hay heroe eliminado</li>
+  }
+</h4>
+
+
+<ul class="mt-2 list-group">
+  @for(hero of listHeroes; track hero.id){
+    <li class="list-group-item">{{hero.name}}</li>
+  }@empty {
+    <li class="list-group-item">no hay heroes</li>
+  }
+</ul>
+
+<hr>
+
+@if(listHeroes.length >0){
+  <button
+  class="btn btn-danger"
+  (click)="removeLastHeroes()"
+  >Eliminar elemento</button>
+}
+
+
