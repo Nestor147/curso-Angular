@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MainComponent } from '../../../dbz/page/main/main.component';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [],
+  imports: [MainComponent],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })

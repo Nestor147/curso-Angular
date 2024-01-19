@@ -1,0 +1,30 @@
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ListComponent } from '../list/list.component';
+import { Character } from '../../interfaces/character.interface';
+import { FormsModule } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
+
+@Component({
+  selector: 'app-dbz-add-character',
+  standalone: true,
+  imports: [ListComponent,FormsModule,CommonModule],
+  templateUrl: './add-character.component.html',
+  styleUrl: './add-character.component.css'
+})
+export class AddCharacterComponent {
+
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+  public character:Character={
+    name:'',
+    power:0
+  }
+
+  emitCharacter():void {
+    if (this.character.name.length ===0 ) return;
+    this.onNewCharacter.emit(this.character);
+    this.character={name:'', power:0}
+  }
+
+}

@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeroComponent } from './hereos/hero/hero.component';
-import { ListComponent } from './hereos/list/list.component';
-import { CounterComponent } from './counter/components/counter/counter.component';
-import { CounterModule } from './counter/counter.module';
+import { DbzModule } from './dbz/dbz.module';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeroComponent,ListComponent,CounterModule],
+  imports: [CommonModule, RouterOutlet, DbzModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
